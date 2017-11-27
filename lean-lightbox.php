@@ -3,7 +3,7 @@
  * Plugin Name:       Lean Lightbox
  * Plugin URI:        https://github.com/andrejcremoznik/lean-lightbox
  * Description:       Lean lightbox plugin for single image links and WordPress galleries.
- * Version:           1.0.0
+ * Version:           1.1
  * Author:            Andrej Cremoznik
  * Author URI:        https://keybase.io/andrejcremoznik
  * License:           MIT
@@ -41,11 +41,11 @@ class LeanLightbox {
       '<script>',
         '(function(){',
           // Find all image links
-          'var a=Array.from(document.querySelectorAll(\'a[href$=".jpg"],a[href$=".jpeg"],a[href$=".png"]\'));',
+          'let a=Array.from(document.querySelectorAll(\'a[href$=".jpg"],a[href$=".jpeg"],a[href$=".png"]\'));',
           // Find all gallery images links
-          'var g=Array.from(document.querySelectorAll(\'.gallery-item a\'));',
+          'let g=Array.from(document.querySelectorAll(\'.gallery-item a\'));',
           // Get only those image links that aren't part of the gallery
-          'var r=a.filter(i=>g.findIndex(gi=>i.offsetTop===i.offsetTop&&i.offsetLeft===gi.offsetLeft)<0);',
+          'let r=a.filter(i=>g.findIndex(gi=>i.offsetTop===i.offsetTop&&i.offsetLeft===gi.offsetLeft)<0);',
           // Create Lightbox for single image links if we have any
           'if(r.length)r.forEach(s=>new Luminous(s));',
           // Create Lightbox for gallery image links if we have any
