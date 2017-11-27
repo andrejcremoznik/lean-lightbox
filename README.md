@@ -18,9 +18,11 @@ Or if you think something should be changed here, submit a pull request.
 
 ## Installation
 
-Same as every other plugin - put it in `CONTENT_DIR/plugins/`.
+Same as every other plugin - put it in `CONTENT_DIR/plugins/lean-lightbox`.
 
-That is `wp-content/plugins/` by default but if you're a developer, you should really look into a better way to [develop](https://github.com/andrejcremoznik/WordPressBP) or [manage](https://github.com/andrejcremoznik/ManagedWP) WordPress sites.
+That is `wp-content/plugins/lean-lightbox` by default but if you're a developer, you should really look into a better way to [develop](https://github.com/andrejcremoznik/WordPressBP) or [manage](https://github.com/andrejcremoznik/ManagedWP) WordPress sites.
+
+**CLI:** `curl -https://github.com/andrejcremoznik/lean-lightbox/archive/1.0.tar.gz -o lean-lightbox.tar.gz && tar -zxf lean-lightbox.tar.gz -C /path/to/CONTENT_DIR/plugins/`
 
 
 ## Why is this not in the WordPress plugin directory?
