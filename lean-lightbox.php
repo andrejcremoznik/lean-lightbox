@@ -45,7 +45,7 @@ class LeanLightbox {
           // Find all gallery images links
           'let g=Array.from(d.querySelectorAll(\'.gallery-item a\'));',
           // Get only those image links that aren't part of the gallery
-          'let r=a.filter(i=>g.findIndex(gi=>i.offsetTop===i.offsetTop&&i.offsetLeft===gi.offsetLeft)<0);',
+          'let r=a.filter(i=>g.findIndex(gi=>i.offsetTop===gi.offsetTop&&i.offsetLeft===gi.offsetLeft)<0);',
           // Create Lightbox for single image links if we have any
           'if(r.length)r.forEach(s=>new Luminous(s));',
           // Create Lightbox for gallery image links if we have any
