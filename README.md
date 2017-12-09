@@ -24,14 +24,14 @@ The execution coded uses ES2015 which means no Internet Explorer. Works in Edge 
 
 `WP_CONTENT_DIR` is a WordPress variable that points to the directory containing `plugins`, `themes`, `uploads`, etc. Default is `/absolute/path/wordpress/wp-content`.
 
-Download the [zip](https://github.com/andrejcremoznik/lean-lightbox/archive/1.2.zip) and extract it to `WP_CONTENT_DIR/plugins/lean-lightbox`.
+Download the [zip](https://github.com/andrejcremoznik/lean-lightbox/archive/1.3.zip) and extract it to `WP_CONTENT_DIR/plugins/lean-lightbox`.
 
 **CLI one-liner:**
 
 ```
 # If WP_CONTENT_DIR/plugins/lean-lightbox doesn't exist, create it first then:
 
-curl -L https://github.com/andrejcremoznik/lean-lightbox/archive/1.2.tar.gz | tar zxf - --strip-components=1 -C WP_CONTENT_DIR/plugins/lean-lightbox/
+curl -L https://github.com/andrejcremoznik/lean-lightbox/archive/1.3.tar.gz | tar zxf - --strip-components=1 -C WP_CONTENT_DIR/plugins/lean-lightbox/
 ```
 
 
