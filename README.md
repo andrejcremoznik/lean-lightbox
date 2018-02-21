@@ -24,14 +24,14 @@ The execution coded uses ES2015 which means no Internet Explorer. Works in Edge 
 
 `WP_CONTENT_DIR` is a WordPress variable that points to the directory containing `plugins`, `themes`, `uploads`, etc. Default is `/absolute/path/wordpress/wp-content`.
 
-Download the [zip](https://github.com/andrejcremoznik/lean-lightbox/archive/1.3.zip) and extract it to `WP_CONTENT_DIR/plugins/lean-lightbox`.
+Download the [zip](https://github.com/andrejcremoznik/lean-lightbox/archive/1.4.zip) and extract it to `WP_CONTENT_DIR/plugins/lean-lightbox`.
 
 **CLI one-liner:**
 
 ```
 # If WP_CONTENT_DIR/plugins/lean-lightbox doesn't exist, create it first then:
 
-curl -L https://github.com/andrejcremoznik/lean-lightbox/archive/1.3.tar.gz | tar zxf - --strip-components=1 -C WP_CONTENT_DIR/plugins/lean-lightbox/
+curl -L https://github.com/andrejcremoznik/lean-lightbox/archive/1.4.tar.gz | tar zxf - --strip-components=1 -C WP_CONTENT_DIR/plugins/lean-lightbox/
 ```
 
 
@@ -50,6 +50,18 @@ The problem is this:
 > ...
 
 The plugin includes Luminous from [cdnjs.com](https://cdnjs.com/libraries/luminous-lightbox). Including this locally would go against everything the word "lean" in the name stands for. The only time you'd include this locally is if you're bundling your Javascript and CSS in a custom template. Otherwise it's an additional HTTP request which may as well go out to a CDN.
+
+
+## Changelog
+
+### 1.4
+
+* Use [Subresource Integrity](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) for files loaded from CDN.
+* Print resources directly to `wp_head` and `wp_footer` because using the `wp_enqueue_` functions yields zero benefits.
+
+### 1.3
+
+* Initial public release
 
 
 ## License

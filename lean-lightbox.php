@@ -3,7 +3,7 @@
  * Plugin Name:       Lean Lightbox
  * Plugin URI:        https://github.com/andrejcremoznik/lean-lightbox
  * Description:       Lean lightbox plugin for single image links and WordPress galleries.
- * Version:           1.2
+ * Version:           1.4
  * Author:            Andrej Cremoznik
  * Author URI:        https://keybase.io/andrejcremoznik
  * License:           MIT
@@ -12,32 +12,31 @@
 if (!defined('WPINC')) die();
 
 class LeanLightbox {
-  protected $plugin_name;
-
   public function __construct() {
-    $this->plugin_name = 'lean-lightbox';
+    // Sources from: https://cdnjs.com/libraries/luminous-lightbox
+    $this->js_src  = 'https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/1.0.1/Luminous.min.js';
+    $this->js_sri  = 'sha256-EzO28u8m/P+Z+eQCVS4kSkt1zjFLpxmCxydymMaRONs=';
+    $this->css_src = 'https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/1.0.1/luminous-basic.min.css';
+    $this->css_sri = 'sha256-uCdaKiNzZUXz+QXd2W48tXdSDRmaWc7SxYe1xTc3A94=';
   }
 
-  public function load_assets() {
-    wp_enqueue_style(
-      $this->plugin_name,
-      'https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/1.0.1/luminous-basic.min.css',
-      [],      // No dependencies
-      null,    // Version is in URL
-      'screen' // Only need the styles for web browsers
-    );
-
-    wp_enqueue_script(
-      $this->plugin_name,
-      'https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/1.0.1/Luminous.min.js',
-      [],   // No dependencies
-      null, // Version is in URL
-      true  // Place the scipt in footer
+  public function add_css() {
+    echo sprintf(
+      '<link rel="stylesheet" href="%s" integrity="%s" crossorigin="anonymous" media="screen">',
+      $this->css_src,
+      $this->css_sri
     );
   }
 
-  public function luminous() {
+  public function add_js() {
     $script = [
+      // Load Luminous script (there are too many downsides to wp_enqueue_script)
+      sprintf(
+        '<script src="%s" integrity="%s" crossorigin="anonymous"></script>',
+        $this->js_src,
+        $this->js_sri
+      ),
+      // Find image links and apply Luminous
       '<script>',
         '(function(d){',
           // Find all image links
@@ -58,8 +57,8 @@ class LeanLightbox {
   }
 
   public function run() {
-    add_action('wp_enqueue_scripts', [$this, 'load_assets']);
-    add_action('wp_footer', [$this, 'luminous'], 21); // 21 = after 'wp_enqueue_scripts'
+    add_action('wp_head',   [$this, 'add_css']);
+    add_action('wp_footer', [$this, 'add_js'], 21); // 21 = after 'wp_enqueue_scripts'
   }
 }
 
