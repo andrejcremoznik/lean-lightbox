@@ -14,24 +14,35 @@ The execution coded uses ES2015 which means no Internet Explorer. Works in Edge 
 ## Features
 
 * No configuration
-* Includes 2 independent files from CDN:
-  1. **1 kB** CSS in `<head>`
-  2. **3.7 kB** JS at the end of `<body>`
-* Appends a `<script>` tag at the end of `<body>` that will attach the lightbox to image links.
+* Includes 2 files from a CDN at the end of `<body>`:
+  1. **1 kB** CSS
+  2. **3.7 kB** JS
+* Appends a `<script>` tag at the end of `<body>` that will attach the lightbox to image and gallery links.
 
 
 ## Installation
 
 `WP_CONTENT_DIR` is a WordPress variable that points to the directory containing `plugins`, `themes`, `uploads`, etc. Default is `/absolute/path/wordpress/wp-content`.
 
-Download the [zip](https://github.com/andrejcremoznik/lean-lightbox/archive/1.4.zip) and extract it to `WP_CONTENT_DIR/plugins/lean-lightbox`.
+Download the [zip](https://github.com/andrejcremoznik/lean-lightbox/archive/1.5.zip) and extract it to `WP_CONTENT_DIR/plugins/lean-lightbox`.
 
 **CLI one-liner:**
 
 ```
+# WP_CONTENT_DIR = wordpress/wp-content (by default)
 # If WP_CONTENT_DIR/plugins/lean-lightbox doesn't exist, create it first then:
 
-curl -L https://github.com/andrejcremoznik/lean-lightbox/archive/1.4.tar.gz | tar zxf - --strip-components=1 -C WP_CONTENT_DIR/plugins/lean-lightbox/
+curl -L https://github.com/andrejcremoznik/lean-lightbox/archive/1.5.tar.gz | tar zxf - --strip-components=1 -C WP_CONTENT_DIR/plugins/lean-lightbox/
+```
+
+
+## Implementation Notes
+
+If you have elements with `z-index` > 0 on your website, add the following to your CSS:
+
+```
+/* Lean-Lightbox: adjust the z-index value for the lightbox */
+.lum-lightbox { z-index: 100; }
 ```
 
 
@@ -53,6 +64,11 @@ The plugin includes Luminous from [cdnjs.com](https://cdnjs.com/libraries/lumino
 
 
 ## Changelog
+
+### 1.5
+
+* Move CSS to the end `<body>`.
+* Documentation updates
 
 ### 1.4
 

@@ -3,7 +3,7 @@
  * Plugin Name:       Lean Lightbox
  * Plugin URI:        https://github.com/andrejcremoznik/lean-lightbox
  * Description:       Lean lightbox plugin for single image links and WordPress galleries.
- * Version:           1.4
+ * Version:           1.5
  * Author:            Andrej Cremoznik
  * Author URI:        https://keybase.io/andrejcremoznik
  * License:           MIT
@@ -20,21 +20,15 @@ class LeanLightbox {
     $this->css_sri = 'sha256-uCdaKiNzZUXz+QXd2W48tXdSDRmaWc7SxYe1xTc3A94=';
   }
 
-  public function add_css() {
-    echo sprintf(
-      '<link rel="stylesheet" href="%s" integrity="%s" crossorigin="anonymous" media="screen">',
-      $this->css_src,
-      $this->css_sri
-    );
-  }
-
-  public function add_js() {
+  public function add_assets() {
     $script = [
       // Load Luminous script (there are too many downsides to wp_enqueue_script)
       sprintf(
-        '<script src="%s" integrity="%s" crossorigin="anonymous"></script>',
+        '<script src="%s" integrity="%s" crossorigin="anonymous"></script><link rel="stylesheet" href="%s" integrity="%s" crossorigin="anonymous" media="screen">',
         $this->js_src,
-        $this->js_sri
+        $this->js_sri,
+        $this->css_src,
+        $this->css_sri
       ),
       // Find image links and apply Luminous
       '<script>',
@@ -57,8 +51,7 @@ class LeanLightbox {
   }
 
   public function run() {
-    add_action('wp_head',   [$this, 'add_css']);
-    add_action('wp_footer', [$this, 'add_js'], 21); // 21 = after 'wp_enqueue_scripts'
+    add_action('wp_footer', [$this, 'add_assets'], 21); // 21 = after 'wp_enqueue_scripts'
   }
 }
 
