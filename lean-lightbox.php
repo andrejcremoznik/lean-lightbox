@@ -3,7 +3,7 @@
  * Plugin Name:       Lean Lightbox
  * Plugin URI:        https://github.com/andrejcremoznik/lean-lightbox
  * Description:       Lean lightbox plugin for single image links and WordPress galleries.
- * Version:           1.5
+ * Version:           2.0
  * Author:            Andrej Cremoznik
  * Author URI:        https://keybase.io/andrejcremoznik
  * License:           MIT
@@ -14,9 +14,9 @@ if (!defined('WPINC')) die();
 class LeanLightbox {
   public function __construct() {
     // Sources from: https://cdnjs.com/libraries/luminous-lightbox
-    $this->js_src  = 'https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/1.0.1/Luminous.min.js';
-    $this->js_sri  = 'sha256-EzO28u8m/P+Z+eQCVS4kSkt1zjFLpxmCxydymMaRONs=';
-    $this->css_src = 'https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/1.0.1/luminous-basic.min.css';
+    $this->js_src  = 'https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.0.0/Luminous.min.js';
+    $this->js_sri  = 'sha256-CJMPaJ2QPWYx2oq/FqbYkyOsSQbWWAQmklkgcVpn3Sw=';
+    $this->css_src = 'https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.0.0/luminous-basic.min.css';
     $this->css_sri = 'sha256-uCdaKiNzZUXz+QXd2W48tXdSDRmaWc7SxYe1xTc3A94=';
   }
 

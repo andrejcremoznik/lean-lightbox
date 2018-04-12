@@ -1,4 +1,4 @@
-Copyright (c) 2017 Andrej Cremoznik
+Copyright (c) 2017-2018 Andrej Cremoznik
 https://github.com/andrejcremoznik/lean-lightbox
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
