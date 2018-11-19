@@ -24,14 +24,14 @@ The execution coded uses ES2015 which means no Internet Explorer. Works in Edge 
 
 `WP_CONTENT_DIR` is the directory containing `plugins`, `themes`, `uploads`, etc. Default is `/path/to/wordpress/wp-content`.
 
-Download the [zip](https://github.com/andrejcremoznik/lean-lightbox/archive/2.0.zip) and extract it to `WP_CONTENT_DIR/plugins/lean-lightbox`.
+Download the [zip](https://github.com/andrejcremoznik/lean-lightbox/archive/2.3.1.zip) and extract it to `WP_CONTENT_DIR/plugins/lean-lightbox`.
 
 **CLI one-liner:**
 
 ```
 # Change the path at the end:
 
-curl -L https://github.com/andrejcremoznik/lean-lightbox/archive/2.0.tar.gz | tar zxf - --transform=s/lean-lightbox-2.0/lean-lightbox/ -C /path/to/wordpress/wp-content/plugins/
+curl -L https://github.com/andrejcremoznik/lean-lightbox/archive/2.3.1.tar.gz | tar zxf - --transform=s/lean-lightbox-2.3.1/lean-lightbox/ -C /path/to/wordpress/wp-content/plugins/
 ```
 
 
@@ -63,6 +63,10 @@ The plugin includes Luminous from [cdnjs.com](https://cdnjs.com/libraries/lumino
 
 
 ## Changelog
+
+### 2.3.1
+
+* Update Luminous to 2.3.1
 
 ### 2.0
 
