@@ -3,7 +3,7 @@
  * Plugin Name:       Lean Lightbox
  * Plugin URI:        https://github.com/andrejcremoznik/lean-lightbox
  * Description:       Lean lightbox plugin for single image links and WordPress galleries.
- * Version:           2.3.1
+ * Version:           2.3.2
  * Author:            Andrej Cremoznik
  * Author URI:        https://keybase.io/andrejcremoznik
  * License:           MIT
@@ -14,10 +14,10 @@ if (!defined('WPINC')) die();
 class LeanLightbox {
   public function __construct() {
     // Sources from: https://cdnjs.com/libraries/luminous-lightbox
-    $this->js_src  = 'https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.1/luminous.min.js';
-    $this->js_sri  = 'sha256-L+jsEsJBRzSB5C59cNukXHjBYdJW8qOu4QeYeYPSmeg=';
-    $this->css_src = 'https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.1/luminous-basic.min.css';
-    $this->css_sri = 'sha256-v8wMBeXyy3X+k+bM6TcyFGCAOpB/NXSn90LzcyRzWSA=';
+    $this->js_src  = 'https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/luminous.min.js';
+    $this->js_sri  = 'sha256-JtowJgZIxtr4WObMQMDqCojFv0TMRb438K2bLmjYS8Q=';
+    $this->css_src = 'https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/luminous-basic.min.css';
+    $this->css_sri = 'sha256-tPW9wLkspLEhKo1rCAUlqiMvw30PPoyOatV5gL8a+/M=';
   }
 
   public function add_assets() {
